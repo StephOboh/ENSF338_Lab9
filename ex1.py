@@ -3,15 +3,14 @@
 
 
 #AI delcalration - used AI to fix up the code 
-
 class DLeftHashTable:
     
     #initialize 
     def __init__(self, entries, buckets):
         self.entries = entries
         self.buckets = buckets
-        self.left_table = [{} for _ in range(entries * buckets)]
-        self.right_table = [{} for _ in range(entries * buckets)]
+        self.left_table = [{} for _ in range(entries * buckets)]  # Initialize left table
+        self.right_table = [{} for _ in range(entries * buckets)]  # Initialize right table
 
      #wasnt sure if you wanted the built in one or to make our own so i just made mine    
     def _hash(self, key, table_index):
