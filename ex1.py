@@ -1,6 +1,9 @@
 
 #ex 1 by svara 
 
+
+#AI delcalration - used AI to fix up the code 
+
 class DLeftHashTable:
     
     #initialize 
