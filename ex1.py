@@ -1,19 +1,24 @@
+
+#ex 1 by svara 
+
 class DLeftHashTable:
+    
+    #initialize 
     def __init__(self, entries, buckets):
         self.entries = entries
         self.buckets = buckets
         self.left_table = [{} for _ in range(entries * buckets)]
         self.right_table = [{} for _ in range(entries * buckets)]
-        
+
+     #wasnt sure if you wanted the built in one or to make our own so i just made mine    
     def _hash(self, key, table_index):
-        # Simple hash function
         return hash(key) % (self.entries * self.buckets) + table_index * self.buckets
     
+    #decide wbere to put the key, value pairs 
     def insert(self, key, value):
         left_index = self._hash(key, 0)
         right_index = self._hash(key, 1)
         
-        # Find the occupancy of the corresponding buckets
         left_occupancy = len(self.left_table[left_index])
         right_occupancy = len(self.right_table[right_index])
         
@@ -22,6 +27,7 @@ class DLeftHashTable:
         else:
             self.right_table[right_index][key] = value
     
+    #searchs for the keys
     def lookup(self, key):
         left_index = self._hash(key, 0)
         right_index = self._hash(key, 1)
@@ -33,13 +39,13 @@ class DLeftHashTable:
         else:
             return None
 
-# Example usage
+#me testing it 
 hash_table = DLeftHashTable(10, 100)
-hash_table.insert("apple", 10)
-hash_table.insert("banana", 20)
-hash_table.insert("orange", 30)
+hash_table.insert("apple", 1)
+hash_table.insert("banana", 2)
+hash_table.insert("orange", 3)
 
-print(hash_table.lookup("apple"))  # Output: 10
-print(hash_table.lookup("banana"))  # Output: 20
-print(hash_table.lookup("orange"))  # Output: 30
-print(hash_table.lookup("grape"))   # Output: None
+print(hash_table.lookup("apple"))  # Output: 1, 2, 3, None 
+print(hash_table.lookup("banana"))  
+print(hash_table.lookup("orange"))  
+print(hash_table.lookup("grape"))   
