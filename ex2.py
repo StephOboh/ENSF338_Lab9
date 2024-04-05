@@ -99,4 +99,8 @@ These "hot spots" could be indicative of a hash function that does not distribut
 or of some pattern in the data that is causing more frequent collisions at specific points. The regularity of the spikes suggests 
 a systematic issue rather than random chance. Identifying and addressing the cause of these "hot spots" could be important 
 for improving the performance of whatever system or algorithm is being analyzed here.
+
+he hotspots in these plots, representing "Left Table Collisions" and "Right Table Collisions," are the index values where there are significantly more collisions than the rest. In both plots, these hotspots are depicted as tall spikes which are much higher than the majority of the data points.
+
+Upon close inspection, these spikes appear to occur at regular intervals. To identify the exact index values of the hotspots, we would ideally use the data from which these plots are generated. However, even without the raw data, it's noticeable that the spikes occur roughly every 50 to 100 index values. If patterns are consistent, they might be occurring at multiples of a specific number. For a more precise analysis, the data used to generate these plots would be needed, as would a closer examination of the x-axis labels to pinpoint the exact index values of the spikes.
 '''
