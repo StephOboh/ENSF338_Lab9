@@ -16,6 +16,14 @@ class DLeftHashTable:
     def _hash(self, key, table_index):
         return hash(key) % (self.entries * self.buckets) + table_index * self.buckets
     
+
+    #realized we needed two hash tables 
+    def left_table_hash(self, key):
+        return self._hash(key, 0)
+
+    def right_table_hash(self, key):
+        return self._hash(key, 1)
+    
     #decide wbere to put the key, value pairs 
     def insert(self, key, value):
         left_index = self._hash(key, 0)
@@ -31,15 +39,16 @@ class DLeftHashTable:
     
     #searchs for the keys
     def lookup(self, key):
-        left_index = self._hash(key, 0)
-        right_index = self._hash(key, 1)
-        
+        left_index = self.left_table_hash(key)
+        right_index = self.right_table_hash(key)
+    
         if key in self.left_table[left_index]:
             return self.left_table[left_index][key]
         elif key in self.right_table[right_index]:
             return self.right_table[right_index][key]
         else:
             return None
+
 
 #me testing it 
 hash_table = DLeftHashTable(10, 100)
@@ -51,3 +60,4 @@ print(hash_table.lookup("apple"))  # Output: 1, 2, 3, None
 print(hash_table.lookup("banana"))  
 print(hash_table.lookup("orange"))  
 print(hash_table.lookup("grape"))   
+
