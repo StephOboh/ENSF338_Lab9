@@ -63,9 +63,10 @@ plt.show()
 # 4. Comment on the results: do the plot shows any “hot spots”? Where? [0.5 pts]
 
 '''
-"Hot spots" in this context would refer to index values where the number of collisions is significantly higher than the surrounding values, which would show as spikes in the plot.
-Both plots exhibit a pattern of periodic spikes, indicating that there are indeed "hot spots" where collisions are notably more frequent. 
-
+"The plot for the left table hash function showcases regularly spaced "hot spots,"  representing a higher number of 
+collisions at these values. These "hot spots" show a non ideal distribution pattern leading to inefficiencies in that 
+hash table. The right table hash function shows a more uniform distribution of collisions, with less
+"hot spots." This indicates a better performance of the hash function."
 
 '''
 
