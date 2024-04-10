@@ -63,6 +63,7 @@ plt.show()
 # 4. Comment on the results: do the plot shows any “hot spots”? Where? [0.5 pts]
 
 '''
+Ai declaration: chatgbt helped us analyze the graphs as it was dificult to tell what is going on
 "The plot for the left table hash function showcases regularly spaced "hot spots,"  representing a higher number of 
 collisions at these values. These "hot spots" show a non ideal distribution pattern leading to inefficiencies in that 
 hash table. The right table hash function shows a more uniform distribution of collisions, with less
